@@ -1,3 +1,5 @@
+const Movie = require('../models/Movie')
+
 module.exports = app => {
     app.get('/', (req, res) => {
         
@@ -7,9 +9,25 @@ module.exports = app => {
     })
 
     app.get('/movies', (req, res) => {
-        
-        console.log('This is Movies area')
+        Movie.show(res)
+    })
 
-        res.send('This is Movies area')
+    app.post('/movies', (req, res) => {
+        const movie = req.body
+
+        Movie.add(movie, res)
+    })
+
+    app.patch('/movies/:id', (req, res) => {
+        const id = parseInt(req.params.id)
+        const movie = req.body
+
+        Movie.update(id, movie, res)
+    })
+
+    app.delete('/movies/:id', (req, res) => {
+        const id = parseInt(req.params.id)
+
+        Movie.delete(id, res)
     })
 }

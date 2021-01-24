@@ -1,7 +1,16 @@
 const expressConfig = require('./config/expressConfig')
+const connection = require('./infra/connection')
+const Tables = require('./infra/Tables')
 
-const app = expressConfig()
+connection.connect((err) => {
+    if (err) console.log(err)
 
-app.listen(3000, () => {
-    console.log(`Server is running on port 3000`)
+    Tables.init(connection)
+    
+    const app = expressConfig()
+    
+    app.listen(3000, () => {
+        console.log(`Server is running on port 3000`)
+    })
+    
 })
