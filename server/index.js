@@ -1,19 +1,7 @@
-const express = require('express')
-const bodyParser = require('body-parser')
+const expressConfig = require('./config/expressConfig')
 
-const app = express()
-const PORT = 3000
+const app = expressConfig()
 
-app.use(bodyParser.urlencoded({extended: true}))
-app.use(bodyParser.json())
-
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`)
-})
-
-app.get('/', (req, res) => {
-
-    console.log('You are in home page');
-
-    res.send('You are in home page')
+app.listen(3000, () => {
+    console.log(`Server is running on port 3000`)
 })
