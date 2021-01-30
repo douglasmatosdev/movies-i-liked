@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import 'App.sass'
+import './App.css'
 import _300 from './300.png'
 
 const App = () => {
@@ -14,7 +14,7 @@ const App = () => {
             console.log(res)
         })
     return (
-        <div>
+        <div className="teste-div">
             <h1>Hello World</h1>
             <img src={_300} alt="300" />
         </div>
