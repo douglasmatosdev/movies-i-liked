@@ -5,8 +5,13 @@ const bodyParser = require('body-parser')
 
 module.exports = () => {
     const app = express()
-    app.use(cors())
-    app.options('*', cors());
+       
+    app.use((req, res, next) => {
+        res.header('Acces-Control-Allow-Origin', '*')
+        app.use(cors())
+        next()
+    })
+
     
     app.use(bodyParser.urlencoded({extended: true}))
     app.use(bodyParser.json())
