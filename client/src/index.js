@@ -10,9 +10,8 @@ const App = () => {
     const baseURL = `http://localhost:${PORT}`
 
     fetch(`${baseURL}/movies`)
-        .then(res => {
-            console.log(res)
-        })
+        .then(res => res.json())
+        .then(res => console.log(res))
     return (
         <div className="teste-div">
             <h1>Hello World</h1>
