@@ -15,16 +15,16 @@ export const InputSearch = ({ placeholder }: Props) => {
 }
 
 const Input = styled.input`
-    height: 40px;
+    width: 150px;
+    height: 30px;
     padding: 0 8px;
     
-    background: #fff3;
+    background: #fff1;
     color: #fff9;
     font-size: 16px;
 
-    border: none;
+    border: 1px solid #fff5;
 `
 const InputSearchContainer = styled.div`
-  min-width: 40%;
-
+  min-width: 20%;
 `

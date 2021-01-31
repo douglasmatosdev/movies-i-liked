@@ -9,7 +9,11 @@ interface Props {
 export const BTNHamburg = ({ open, onClick }: Props) => {
     return (
         <BTNHamburgContainer onClick={onClick}>
-            <IconHamburg open={open} />
+            <IconHamburg open={open}>
+                <IconHamburgItem className="IconHamburg_item" />
+                <IconHamburgItem className="IconHamburg_item" />
+                <IconHamburgItem className="IconHamburg_item" />
+            </IconHamburg>
         </BTNHamburgContainer>
     )
 }
@@ -17,8 +21,8 @@ export const BTNHamburg = ({ open, onClick }: Props) => {
 const BTNHamburgContainer = styled.div`
     /* background: orange; */
     /* border: 1px solid orange; */
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     cursor: pointer;
 
     display: flex;
@@ -27,51 +31,47 @@ const BTNHamburgContainer = styled.div`
 
 
 `
+
+const IconHamburgItem = styled.div`
+    width: inherit;
+    height: 4px;
+    background-color: #fff;
+
+`
 const IconHamburg = styled.div<Props>`
-    width: 100%;
-    min-height: 6px;
-    background: ${({ open }) => open ? css`transparent` : css`#fff`};
+    /* border: 1px solid red; */
+
+    width: inherit;
+    height: inherit;
+
     position: relative;
-    transition: ease-in-out 0.3s;
 
-    &::before {
-        content: '';
-        width: 100%;
-        min-height: 6px;
-        background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 
-        position: absolute;
-        top: -16px;
-        left: 0;
+    transform-style: preserve-3d;
+  perspective: 30px;
 
-        ${({ open }) => open ? css`
-        transform-style: preserve-3d;
-        transform: rotate(45deg);
-        transform-origin: 2% 150%;
-            z-index: 10;
-            transition: transform 0.3s linear;
-
-        ` : ''}
-
-    }
-
-    &::after {
-        content: '';
-        width: 100%;
-        min-height: 6px;
-        background: #fff;
-
-        position: absolute;
-        top: 16px;
-        left: 0;
-
-        ${({ open }) => open ? css`
-        transform-style: preserve-3d;
-        transform: rotate(-45deg);
-        transform-origin: 2% -60%;
-            z-index: 10;
-            transition: transform 0.3s linear;
-
-        ` : ''}
+    .IconHamburg_item {
+        transition: transform 0.3s;
+        perspective-origin: center center;
+        ${props => props?.open
+       
+        ? css`
+            &:nth-child(2) {
+                display: none;
+            }
+            &:nth-child(1) {
+            transform: rotate(45deg) translate(35%, 8px);
+            
+        }
+        &:nth-child(3) {
+            
+            transform: rotate(-45deg) translate(35%, -8px);
+        }
+        ` :
+        ''}
     }
 `
