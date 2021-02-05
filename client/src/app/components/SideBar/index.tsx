@@ -2,13 +2,18 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 import userAvatar from '../../../assets/images/avatar.jpeg'
 
+
+import { useSelector } from 'react-redux'
 interface Props {
     open?: boolean
 }
 
+
 export const SideBar = ({ open }: Props) => {
+    const r = useSelector(state => state.sidebar)
+
     return (
-        <MILSideBarContainer open={open}>
+        <MILSideBarContainer open={r}>
             <MILSideBarHeader>
                 <div className="SideBar_header-user">
                     <div className="SideBar_Avatar">
@@ -93,20 +98,25 @@ const MILSideBarContainer = styled.div<Props>`
     min-height: 100vh;
     height: 100%;
     z-index: 500;
-    transition: left .5s;
-
-    overflow-y: scroll;
-    --webkit-overflow-scrolling: touch;
+    transition: transform .5s;
 
     margin: 0;
     padding: 16px;
 
     position: absolute;
     top: 70px;
-    ${props => props?.open ? css`left: 0;` : css`left: -99999px;`};
+    ${props => props?.open ? css`transform: translateX(0);` : css`transform: translateX(-280px);`};
 
     background-color: #222;
     color: #fff7;
     font-size: 11px;
     font-family: sans-serif;
+
+    -webkit-overflow-scrolling: touch;
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
 `

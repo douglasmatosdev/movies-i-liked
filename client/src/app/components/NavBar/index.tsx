@@ -5,12 +5,19 @@ import mil from '../../../assets/images/mil.png'
 import { BTNHamburg } from '../BTNHamburg'
 import { InputSearch } from '../InputSearch'
 
-export const NavBar = () => {
+import slider from '../../../store/SideBar/actions'
+import { useSelector, useDispatch } from 'react-redux'
+
+const NavBar = ({ prop }) => {
     const [isOpen, setIsOpen] = React.useState(false)
+    
+    const dispatch = useDispatch()
+    const result = useSelector(state => state.sidebar)
+    // console.log(result);
 
     const hanlerClick = () => {
         setIsOpen(!isOpen)
-        console.log("click ", isOpen)
+        dispatch(slider(!isOpen))
     }
 
     return (
@@ -21,6 +28,17 @@ export const NavBar = () => {
         </nav>
     )
 }
+/*
+* OLD METHOD
+*
+    const mapStateToProps = (state, ownProps) => {
+        return {
+            prop: state.sidebar
+        }
+    }
+    export default connect(mapStateToProps)(NavBar)
+*/
+export default NavBar
 
 const Brand = styled.div`
     margin: 0;

@@ -1,5 +1,6 @@
 import React from 'react'
-import { NavBar, Footer } from './components'
+import NavBar from './components/NavBar'
+import { Footer } from './components'
 import { HeaderBanner } from './components/HeaderBanner'
 import { AppGrid } from './components/AppGrid'
 import { SideBar } from './components/SideBar'
