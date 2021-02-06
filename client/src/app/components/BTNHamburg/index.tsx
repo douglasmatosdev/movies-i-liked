@@ -35,8 +35,7 @@ const BTNHamburgContainer = styled.div`
 const IconHamburgItem = styled.div`
     width: inherit;
     height: 4px;
-    background-color: #fff;
-
+    background-color: #fffc;
 `
 const IconHamburg = styled.div<Props>`
     /* border: 1px solid red; */
