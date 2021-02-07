@@ -95,7 +95,6 @@ const MILSideBarHeader = styled.div`
 
 const MILSideBarContainer = styled.div<Props>`
     width: 250px;
-    min-height: 100vh;
     height: 100%;
     z-index: 500;
     transition: transform .5s;
@@ -103,8 +102,9 @@ const MILSideBarContainer = styled.div<Props>`
     margin: 0;
     padding: 16px;
 
-    position: absolute;
+    position: fixed;
     top: 70px;
+
     ${props => props?.open ? css`transform: translateX(0);` : css`transform: translateX(-280px);`};
 
     background-color: #222;
