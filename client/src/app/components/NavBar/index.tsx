@@ -8,7 +8,7 @@ import { InputSearch } from '../InputSearch'
 import slider from '../../../store/SideBar/actions'
 import { useSelector, useDispatch } from 'react-redux'
 
-const NavBar = ({ prop }) => {
+const NavBar = () => {
     const [isOpen, setIsOpen] = React.useState(false)
     
     const dispatch = useDispatch()
