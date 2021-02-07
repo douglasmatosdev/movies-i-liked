@@ -1,16 +1,16 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
-import './NavBar.scss'
+
 import mil from '../../../assets/images/mil.png'
 import { BTNHamburg } from '../BTNHamburg'
 import { InputSearch } from '../InputSearch'
 
-import slider from '../../../store/SideBar/actions'
+import slider from '../../../redux/sideBar/actions'
 import { useSelector, useDispatch } from 'react-redux'
 
 const NavBar = () => {
     const [isOpen, setIsOpen] = React.useState(false)
-    
+
     const dispatch = useDispatch()
     const result = useSelector(state => state.sidebar)
     // console.log(result);
@@ -21,11 +21,11 @@ const NavBar = () => {
     }
 
     return (
-        <nav className="MIL_Navbar-navbar">
+        <NavBarContainer className="MIL_Navbar-navbar">
             <BTNHamburg open={isOpen} onClick={hanlerClick} />
             <Brand img={mil} />
             <InputSearch placeholder='Search...' />
-        </nav>
+        </NavBarContainer>
     )
 }
 /*
@@ -40,6 +40,19 @@ const NavBar = () => {
 */
 export default NavBar
 
+const NavBarContainer = styled.div`
+    padding: 16px;
+
+    background: ${props => props.theme.PRIMARY_BACKGROUND_COLOR};
+    color: ${props => props.theme.PRIMARY_TEXT_COLOR};
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    z-index: 100;
+`
+
 const Brand = styled.div`
     margin: 0;
     padding: 0;
@@ -50,5 +63,4 @@ const Brand = styled.div`
     background-repeat: no-repeat;
     background-size: contain;
     background-position:  50% 50%;
-    /* border: 1px solid red; */
 `

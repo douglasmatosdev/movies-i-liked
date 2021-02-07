@@ -19,11 +19,11 @@ const Input = styled.input`
     height: 30px;
     padding: 0 8px;
     
-    background: #fff1;
-    color: #fff9;
+    background: ${props => props.theme.PRIMARY_BACKGROUND_COLOR};
+    color: ${props => props.theme.PRIMARY_TEXT_COLOR};
     font-size: 16px;
 
-    border: 1px solid #fff5;
+    border: 1px solid ${props => props.theme.PRIMARY_BORDER_COLOR};
 `
 const InputSearchContainer = styled.div`
   min-width: 20%;

@@ -26,8 +26,8 @@ const NavBarBottomContainer = styled.div`
     justify-content: space-around;
     align-items: center;
 
-    background: #555;
-    color: #fff;
+    background: ${props => props.theme.PRIMARY_BACKGROUND_COLOR};
+    color: ${props => props.theme.PRIMARY_TEXT_COLOR};
     position: absolute;
     bottom: 0;
 

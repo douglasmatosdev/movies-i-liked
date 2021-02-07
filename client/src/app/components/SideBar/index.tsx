@@ -47,7 +47,7 @@ const MILSideBarSettings = styled.div`
     height: 100px;
 
     padding: 6px 0;
-
+   
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -56,7 +56,7 @@ const MILSideBarSettings = styled.div`
     .SideBarSettings_Item a {
         cursor: pointer;
         font-size: 18px;
-        color: #fff7;
+        color: ${props => props.theme.PRIMARY_TEXT_COLOR};
         text-decoration: none;
         list-style: none;
     }
@@ -107,8 +107,8 @@ const MILSideBarContainer = styled.div<Props>`
 
     ${props => props?.open ? css`transform: translateX(0);` : css`transform: translateX(-280px);`};
 
-    background-color: #222;
-    color: #fff7;
+    background-color: ${props => props.theme.PRIMARY_BACKGROUND_COLOR};
+    color: ${props => props.theme.PRIMARY_TEXT_COLOR};
     font-size: 11px;
     font-family: sans-serif;
 
