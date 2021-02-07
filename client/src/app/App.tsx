@@ -9,14 +9,14 @@ import { SideBar } from './components/SideBar'
 import NavBarBottom from './components/NavBarBottom'
 
 const App = () => {
-    const [state, setState] = React.useState([])
 
     return (
         <AppContainer className="MIL_App">
             <NavBar />
             {/* <HeaderBanner /> */}
-            {/* <AppGrid /> */}
+            <AppGrid />
             <SideBar />
+            
             <NavBarBottom/>
         </AppContainer>
     )

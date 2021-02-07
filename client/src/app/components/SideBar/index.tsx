@@ -1,13 +1,12 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
-import userAvatar from '../../../assets/images/avatar.jpeg'
-
-
 import { useSelector } from 'react-redux'
+
+import userAvatar from '../../../assets/images/avatar.jpeg'
+import AppSwitch from '../AppSwitch'
 interface Props {
     open?: boolean
 }
-
 
 export const SideBar = ({ open }: Props) => {
     const r = useSelector(state => state.sidebar)
@@ -36,6 +35,9 @@ export const SideBar = ({ open }: Props) => {
                 </div>
                 <div className="SideBarSettings_Item">
                     <a href={`#`}>Contact</a>
+                </div>
+                <div className="SideBarSettings_Item">
+                    <AppSwitch />
                 </div>
             </MILSideBarSettings>
         </MILSideBarContainer>

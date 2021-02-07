@@ -19,8 +19,6 @@ export const BTNHamburg = ({ open, onClick }: Props) => {
 }
 
 const BTNHamburgContainer = styled.div`
-    /* background: orange; */
-    /* border: 1px solid orange; */
     width: 30px;
     height: 30px;
     cursor: pointer;
@@ -28,18 +26,14 @@ const BTNHamburgContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-
-
 `
 
 const IconHamburgItem = styled.div`
     width: inherit;
     height: 4px;
-    background-color: #fffc;
+    background-color: ${props => props.theme.PRIMARY_TEXT_COLOR};
 `
 const IconHamburg = styled.div<Props>`
-    /* border: 1px solid red; */
-
     width: inherit;
     height: inherit;
 

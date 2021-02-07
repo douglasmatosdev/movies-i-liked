@@ -4,7 +4,6 @@ export default function SideBarReducer(state = false, action) {
             return action.payload
         }
         break
-        
         default:
             return state
     }

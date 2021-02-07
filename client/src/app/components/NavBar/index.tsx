@@ -9,16 +9,10 @@ import slider from '../../../redux/sideBar/actions'
 import { useSelector, useDispatch } from 'react-redux'
 
 const NavBar = () => {
-    const [isOpen, setIsOpen] = React.useState(false)
-
     const dispatch = useDispatch()
-    const result = useSelector(state => state.sidebar)
-    // console.log(result);
-
-    const hanlerClick = () => {
-        setIsOpen(!isOpen)
-        dispatch(slider(!isOpen))
-    }
+    const isOpen = useSelector(state => state.sidebar)
+    
+    const hanlerClick = () => dispatch(slider(!isOpen))
 
     return (
         <NavBarContainer className="MIL_Navbar-navbar">
