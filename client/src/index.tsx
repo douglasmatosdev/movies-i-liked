@@ -1,8 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import store from './redux/store'
+import { store, persistedStore } from './redux/store'
 import { Provider, useSelector, useDispatch } from 'react-redux'
+import { PersistGate } from 'redux-persist/integration/react'
 import style, { ThemeProvider } from 'styled-components'
 
 import '@fortawesome/fontawesome-free/js/brands'
@@ -29,9 +30,11 @@ const Main = ({ children }) => {
 ReactDOM.render(
     <React.StrictMode>
         <Provider store={store}>
-            <Main>
-                <App />
-            </Main>
+            <PersistGate persistor={persistedStore}>
+                <Main>
+                    <App />
+                </Main>
+            </PersistGate>
         </Provider>
     </React.StrictMode>,
     document.getElementById('root')
