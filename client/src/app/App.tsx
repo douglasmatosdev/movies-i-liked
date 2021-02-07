@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 
 import NavBar from './components/NavBar'
-import { Footer } from './components'
 import { HeaderBanner } from './components/HeaderBanner'
 import { AppGrid } from './components/AppGrid'
 import { SideBar } from './components/SideBar'
@@ -14,7 +13,7 @@ const App = () => {
         <AppContainer className="MIL_App">
             <NavBar />
             {/* <HeaderBanner /> */}
-            <AppGrid />
+            {/* <AppGrid /> */}
             <SideBar />
             
             <NavBarBottom/>
