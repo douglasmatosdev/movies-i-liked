@@ -6,10 +6,12 @@ import storage from 'redux-persist/lib/storage' // defaults to localStorage for 
 
 import SideBarReducer from './sideBar/reducer'
 import themeReducer from './theme/reducer'
+import registrationReducer from './registration/reducer'
 
 const rootReducer = combineReducers({
     sidebar: SideBarReducer,
-    theme: themeReducer
+    theme: themeReducer,
+    register: registrationReducer
 })
 
 const persistedReducer = persistReducer({

@@ -1,13 +1,21 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 
+import { useSelector, useDispatch } from 'react-redux'
+import { registrationAction } from '../../../redux/registration/action'
+
 const NavBarBottom = () => {
+    const register = useSelector(state => state.register)
+    const dispatch = useDispatch()
+
+    console.log(register)
+
     return (
         <NavBarBottomContainer>
             <span>
                 <i className="fas fa-home"></i>
             </span>
-            <span>
+            <span onClick={() => dispatch(registrationAction(!register))}>
                 <i className="fas fa-plus-circle"></i>
             </span>
             <span>
@@ -39,6 +47,7 @@ const NavBarBottomContainer = styled.div`
         align-items: center;
         width: 32px;
         height: 32px;
+        cursor: pointer;
 
         .fa-home,
         .fa-plus-circle,
