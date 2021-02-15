@@ -73,7 +73,7 @@ box-sizing: border-box;
 `
 
 
-const RegisterRow = styled.div`
+const RegisterRow = styled.div<{ columns?: number }>`
     width: 100%;
     margin-bottom: 32px;
     display: flex;
