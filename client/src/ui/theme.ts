@@ -4,7 +4,10 @@ export const darkTheme = {
     PRIMARY_TEXT_COLOR: '#CCC',
     PRIMARY_BUTTON_COLOR: '#',
     PRIMARY_BUTTON_TEXT_COLOR: '#',
-    PRIMARY_BORDER_COLOR: '#777'
+    PRIMARY_BORDER_COLOR: '#777',
+    UPLOAD_BACKGROUND_COLOR: '#bbb',
+    UPLOAD_TEXT_COLOR: '#bbb5',
+    UPLOAD_BORDER_COLOR: '#bbb'
 }
 export const lightTheme = {
     mode: 'light',
@@ -12,5 +15,8 @@ export const lightTheme = {
     PRIMARY_TEXT_COLOR: '#222',
     PRIMARY_BUTTON_COLOR: '#',
     PRIMARY_BUTTON_TEXT_COLOR: '#',
-    PRIMARY_BORDER_COLOR: '#999'
+    PRIMARY_BORDER_COLOR: '#999',
+    UPLOAD_BACKGROUND_COLOR: '#bbb5',
+    UPLOAD_TEXT_COLOR: '#bbb',
+    UPLOAD_BORDER_COLOR: '#bbb5'
 }

@@ -107,7 +107,7 @@ const MILSideBarContainer = styled.div<Props>`
     position: fixed;
     top: 70px;
 
-    ${props => props?.open ? css`transform: translateX(0);` : css`transform: translateX(-280px);`};
+    ${props => props?.open ? css`transform: translateX(0);` : css`transform: translateX(-285px);`};
 
     background-color: ${props => props.theme.PRIMARY_BACKGROUND_COLOR};
     color: ${props => props.theme.PRIMARY_TEXT_COLOR};
